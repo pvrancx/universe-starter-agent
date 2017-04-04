@@ -2,6 +2,7 @@ import argparse
 import os
 import sys
 from six.moves import shlex_quote
+import time
 
 parser = argparse.ArgumentParser(description="Run commands")
 parser.add_argument('-w', '--num-workers', default=1, type=int,
@@ -108,6 +109,8 @@ def run():
             os.environ["TMUX"] = ""
         os.system("\n".join(cmds))
     print('\n'.join(notes))
+    while True:
+        time.sleep(30)
 
 
 if __name__ == "__main__":
