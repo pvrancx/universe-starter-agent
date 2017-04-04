@@ -7,7 +7,7 @@ import six.moves.queue as queue
 import scipy.signal
 import threading
 import distutils.version
-use_tf12_api = distutils.version.LooseVersion(tf.VERSION) >= distutils.version.LooseVersion('0.12.0')
+use_tf12_api = False
 
 def discount(x, gamma):
     return scipy.signal.lfilter([1], [1, -gamma], x[::-1], axis=0)[::-1]
