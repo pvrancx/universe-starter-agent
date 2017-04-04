@@ -24,6 +24,7 @@ def create_atari_env(env_id):
     env = AtariRescale42x42(env)
     env = DiagnosticsInfo(env)
     env = Unvectorize(env)
+    env.configure()
     return env
 
 def DiagnosticsInfo(env, *args, **kwargs):
